@@ -1,0 +1,308 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Panorama-Lauf - Lauterstein</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <link href="https://ai-public.creatie.ai/gen_page/tailwind-custom.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <script src="https://cdn.tailwindcss.com/3.4.5?plugins=forms@0.5.7,typography@0.5.13,aspect-ratio@0.4.2,container-queries@0.1.1"></script>
+    <script src="https://ai-public.creatie.ai/gen_page/tailwind-config.min.js" data-color="#000000" data-border-radius="small"></script>
+</head>
+<body class="bg-gray-50 font-[&#39;Montserrat&#39;]">
+    <nav class="bg-white shadow-sm">
+        <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <img class="h-8 w-auto" src="https://tv-weissenstein.de/files/logo/TV_Weissenstein_Logo_Vektor_max.png" alt="Panorama-Lauf"/>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="#" class="border-custom text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Startseite</a>
+                        <a href="#races" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Läufe</a>
+                        <a href="#schedule" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Zeitplan</a>
+                        <a href="#contact" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">Kontakt</a>
+                    </div>
+                </div>
+                <div class="flex items-center">
+                    <button class="!rounded-button bg-custom text-white px-4 py-2 text-sm font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-custom">Jetzt Anmelden</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="relative bg-gray-900 h-[600px] overflow-hidden">
+        <img src="https://creatie.ai/ai/api/search-image?query=A dramatic panoramic mountain trail running scene with runners traversing scenic alpine paths, majestic peaks in the background, morning sunlight casting long shadows, professional sports photography style, inspiring outdoor adventure atmosphere&width=1920&height=600&orientation=landscape&flag=7cf250bc-1e73-46a7-b992-a61cd6792c32&flag=140051cb-6b43-4fdf-88c1-a16491a60247" class="absolute inset-0 w-full h-full object-cover" alt="Hero"/>
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center">
+            <div class="text-center">
+                <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl">
+                    <span class="block">Panorama-Lauf 2024</span>
+                    <span class="block text-custom">Übertreffe Deine Grenzen</span>
+                </h1>
+                <p class="mt-3 max-w-md mx-auto text-base text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">Erlebe die atemberaubenden Laufwege Lautersteins</p>
+                <div class="mt-10 flex justify-center space-x-8">
+                    <div class="text-white text-center">
+                        <span class="block text-3xl font-bold" id="days">47</span>
+                        <span class="text-sm">Tage</span>
+                    </div>
+                    <div class="text-white text-center">
+                        <span class="block text-3xl font-bold" id="hours">00</span>
+                        <span class="text-sm">Stunden</span>
+                    </div>
+                    <div class="text-white text-center">
+                        <span class="block text-3xl font-bold" id="minutes">00</span>
+                        <span class="text-sm">Minuten</span>
+                    </div>
+                    <div class="text-white text-center">
+                        <span class="block text-3xl font-bold" id="seconds">00</span>
+                        <span class="text-sm">Sekunden</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section id="races" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">Laufkategorien</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-900">Panorama-Lauf</h3>
+                        <p class="text-custom font-bold mt-1">11.8 km</p>
+                        <div class="h-40 mt-4" id="chart1"></div>
+                        <p class="mt-4 text-gray-600 text-sm">Fordere dich selbst heraus mit unserem Signaturlauf mit atemberaubender Aussicht.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-900">Lauterstein-Lauf</h3>
+                        <p class="text-custom font-bold mt-1">6 km</p>
+                        <div class="h-40 mt-4" id="chart2"></div>
+                        <p class="mt-4 text-gray-600 text-sm">Eine moderate Strecke, perfekt für fortgeschrittene Läufer.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-900">Nordic-Walking</h3>
+                        <p class="text-custom font-bold mt-1">6 km</p>
+                        <div class="h-40 mt-4" id="chart3"></div>
+                        <p class="mt-4 text-gray-600 text-sm">Genieße die malerische Route in deinem eigenen Tempo beim Nordic Walking.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-lg font-semibold text-gray-900">Einsteiger-Lauf</h3>
+                        <p class="text-custom font-bold mt-1">4.5 km</p>
+                        <div class="h-40 mt-4" id="chart4"></div>
+                        <p class="mt-4 text-gray-600 text-sm">Perfekte Einführung für Anfänger.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">Bereit mitzumachen?</h2>
+            <p class="text-lg text-gray-600 mb-8">Anmeldeschluss ist am 12. Juli 2025</p>
+            <a href="#" class="!rounded-button inline-flex items-center px-8 py-3 border border-transparent text-base font-medium text-white bg-custom hover:bg-blue-700">Jetzt Anmelden</a>
+        </div>
+    </section>
+    <section id="schedule" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">Veranstaltungsablauf</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="flow-root">
+                    <ul class="-mb-8">
+                        <li class="relative pb-8">
+                            <div class="relative flex items-start space-x-3">
+                                <div class="h-8 w-8 rounded-full bg-custom flex items-center justify-center">
+                                    <i class="fas fa-running text-white"></i>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <h3 class="text-base font-medium text-gray-900">Panorama-Lauf (11.8 km)</h3>
+                                    <p class="text-sm text-gray-500">Start-Zeit: 9:00</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="relative pb-8">
+                            <div class="relative flex items-start space-x-3">
+                                <div class="h-8 w-8 rounded-full bg-custom flex items-center justify-center">
+                                    <i class="fas fa-running text-white"></i>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <h3 class="text-base font-medium text-gray-900">Lauterstein-Lauf (6 km)</h3>
+                                    <p class="text-sm text-gray-500">Start-Zeit: 9:30</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="relative pb-8">
+                            <div class="relative flex items-start space-x-3">
+                                <div class="h-8 w-8 rounded-full bg-custom flex items-center justify-center">
+                                    <i class="fas fa-walking text-white"></i>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <h3 class="text-base font-medium text-gray-900">Nordic-Walking (6 km)</h3>
+                                    <p class="text-sm text-gray-500">Start-Zeit: 10:00</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="relative pb-8">
+                            <div class="relative flex items-start space-x-3">
+                                <div class="h-8 w-8 rounded-full bg-custom flex items-center justify-center">
+                                    <i class="fas fa-running text-white"></i>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <h3 class="text-base font-medium text-gray-900">Einsteiger-Lauf (4.5 km)</h3>
+                                    <p class="text-sm text-gray-500">Start-Zeit: 10:30</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="relative">
+                            <div class="relative flex items-start space-x-3">
+                                <div class="h-8 w-8 rounded-full bg-custom flex items-center justify-center">
+                                    <i class="fas fa-trophy text-white"></i>
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <h3 class="text-base font-medium text-gray-900">Siegerehrung</h3>
+                                    <p class="text-sm text-gray-500">Start-Zeit: 13:00</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">Kontaktiere Uns</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <div class="bg-white rounded-lg shadow-sm p-6">
+                        <div class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                                <input type="text" name="name" id="name" class="mt-1 block w-full border-gray-300 focus:ring-custom focus:border-custom !rounded-button"/>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                                <input type="email" name="email" id="email" class="mt-1 block w-full border-gray-300 focus:ring-custom focus:border-custom !rounded-button"/>
+                            </div>
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-gray-700">Betreff</label>
+                                <input type="text" name="subject" id="subject" class="mt-1 block w-full border-gray-300 focus:ring-custom focus:border-custom !rounded-button"/>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700">Nachricht</label>
+                                <textarea id="message" name="message" rows="4" class="mt-1 block w-full border-gray-300 focus:ring-custom focus:border-custom !rounded-button"></textarea>
+                            </div>
+                            <button type="submit" class="!rounded-button w-full bg-custom text-white px-4 py-2 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-custom">Nachricht Senden</button>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="bg-white rounded-lg shadow-sm p-6">
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="text-lg font-medium text-gray-900">Kontaktinformationen</h3>
+                                <dl class="mt-4 space-y-4">
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0">
+                                            <i class="fas fa-envelope text-custom"></i>
+                                        </div>
+                                        <div class="ml-3 text-sm">
+                                            <dt class="text-gray-500">Email</dt>
+                                            <dd class="mt-1">panola@tv-weissenstein.de</dd>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0">
+                                            <i class="fas fa-phone text-custom"></i>
+                                        </div>
+                                        <div class="ml-3 text-sm">
+                                            <dt class="text-gray-500">Veranstaltungstelefon</dt>
+                                            <dd class="mt-1">+49 123 456 789</dd>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0">
+                                            <i class="fas fa-map-marker-alt text-custom"></i>
+                                        </div>
+                                        <div class="ml-3 text-sm">
+                                            <dt class="text-gray-500">Standort</dt>
+                                            <dd class="mt-1">Turnhalle Weißenstein<br/>Panoramaweg 1<br/>73111 Lauterstein</dd>
+                                        </div>
+                                    </div>
+                                </dl>
+                            </div>
+                            <div class="aspect-w-16 aspect-h-9">
+                                <img src="https://ai-public.creatie.ai/gen_page/map_placeholder_1280x720.png" alt="Location Map" class="w-full h-full object-cover rounded-lg"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-gray-900">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <img class="h-8 w-auto mx-auto" src="https://tv-weissenstein.de/files/logo/TV_Weissenstein_Logo_Vektor_max.png" alt="Panorama-Lauf"/>
+                <p class="mt-4 text-base text-gray-400">© 2024 Panorama-Lauf. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const countDownDate = new Date("July 12, 2025 17:30:00").getTime();
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+            document.getElementById("days").innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("minutes").innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("seconds").innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+        function initChart(elementId, data) {
+            const chart = echarts.init(document.getElementById(elementId));
+            const option = {
+                animation: false,
+                grid: {
+                    left: '3%',
+                    right: '4%',
+                    bottom: '3%',
+                    top: '3%',
+                    containLabel: true
+                },
+                xAxis: {
+                    type: 'category',
+                    boundaryGap: false,
+                    show: false
+                },
+                yAxis: {
+                    type: 'value',
+                    show: false
+                },
+                series: [{
+                    data: data,
+                    type: 'line',
+                    areaStyle: {
+                        color: '#2563EB20'
+                    },
+                    lineStyle: {
+                        color: '#2563EB'
+                    },
+                    symbol: 'none',
+                    smooth: true
+                }]
+            };
+            chart.setOption(option);
+        }
+        initChart('chart1', [800, 1200, 900, 1500, 1100, 1800, 1300]);
+        initChart('chart2', [600, 900, 700, 1100, 800, 1200, 900]);
+        initChart('chart3', [600, 800, 700, 900, 800, 1000, 900]);
+        initChart('chart4', [400, 600, 500, 700, 600, 800, 700]);
+    </script>
